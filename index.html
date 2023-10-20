@@ -5,40 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tableau Visualization</title>
+    <style>
+        .tableau-viewport {
+            overflow: hidden;
+            height: calc(100% - 30px); /* Adjust this value if necessary */
+        }
+
+        .tableau-viewport iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <!-- Updated Tableau Embed Script -->
-    <div class='tableauPlaceholder' id='viz1697813818848' style='position: relative'>
-        <noscript>
-            <a href='#'>
-                <img alt='Dashboard 1 ' src='https://public.tableau.com/static/images/Ne/NewWorkbooktest_16978108162560/Dashboard1/1_rss.png' style='border: none' />
-            </a>
-        </noscript>
-        <object class='tableauViz' style='display:none;'>
-            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-            <param name='embed_code_version' value='3' />
-            <param name='site_root' value='' />
-            <param name='name' value='NewWorkbooktest_16978108162560/Dashboard1' />
-            <param name='tabs' value='no' />
-            <param name='toolbar' value='yes' />
-            <param name='static_image' value='https://public.tableau.com/static/images/Ne/NewWorkbooktest_16978108162560/Dashboard1/1.png' />
-            <param name='animate_transition' value='yes' />
-            <param name='display_static_image' value='yes' />
-            <param name='display_spinner' value='yes' />
-            <param name='display_overlay' value='yes' />
-            <param name='display_count' value='yes' />
-            <param name='language' value='en-US' />
-        </object>
+    <!-- Tableau Embed Code with Viewport -->
+    <div class="tableau-viewport">
+        <iframe src="YOUR_TABLEAU_PUBLIC_URL_HERE" frameborder="0"></iframe>
     </div>
 
-    <!-- Updated Tableau JavaScript -->
+    <!-- Tableau JavaScript -->
     <script type='text/javascript'>
-        var divElement = document.getElementById('viz1697813818848');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        if ( divElement.offsetWidth > 800 ) {
+        var divElement = document.querySelector('.tableau-viewport');
+        var vizElement = divElement.querySelector('iframe');
+        if (window.innerWidth > 800) {
             vizElement.style.width = '1000px';
             vizElement.style.height = '827px';
-        } else if ( divElement.offsetWidth > 500 ) {
+        } else if (window.innerWidth > 500) {
             vizElement.style.width = '1000px';
             vizElement.style.height = '827px';
         } else {
